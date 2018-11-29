@@ -1,5 +1,4 @@
-install: make get-deps
 language: c
 compiler:
 -gcc
-script: make clean && make test
+script: make clean && sudo apt-get update && make dep && make test
