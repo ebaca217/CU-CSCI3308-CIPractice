@@ -91,6 +91,7 @@ START_TEST(test_2d_dist)
 }
 END_TEST
 
+/*test to see if the triangle area function works correctly*/
 START_TEST(test_2d_area_triangle)
 {
     coord_2d_t a;
@@ -104,6 +105,16 @@ START_TEST(test_2d_area_triangle)
     area = coord_2d_area_triangle(&a, &b, &c);
     exp = 0;
     ck_assert(area == exp);
+
+    a.x = 1;
+    b.x = 3;
+    c.x = 7;
+    a.y = 1;
+    b.y = 4;
+    c.y = 0;
+    area = coord_2d_area_triangle(&a, &b, &c);
+    exp = 10;
+    ck_assert(area != exp);
 }
 END_TEST
 
